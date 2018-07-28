@@ -1,0 +1,16 @@
+[Unit]
+Description=Hashicorp Vault server
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+Restart=on-failure
+ExecStart=/usr/local/bin/vault server -config=/etc/vault.hcl
+ExecStop=/usr/local/bin/vault step-down
+User=vault
+Group=vault
+TimeoutStartSec=1
+
+[Install]
+WantedBy=multi-user.target
