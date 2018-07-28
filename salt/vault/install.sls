@@ -1,4 +1,4 @@
-{% set vault_version = '0.9.1' %}
+{% set vault_version = '0.10.4' %}
 
 vault:
   archive.extracted:
