@@ -10,6 +10,6 @@ postgres:
   postgres_user.present:
     - name: vault
     - superuser: True
-    - password: complex_password
+    - password: complex_p$ssw0rd
     - require:
       - pkg: postgres

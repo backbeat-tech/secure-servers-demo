@@ -135,4 +135,3 @@ def postgres_role_enabled(name, db_name='', creation_statements=None, mount_poin
         ret['comment'] = msg
 
         return ret
-    pass

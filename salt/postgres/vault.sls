@@ -8,9 +8,9 @@ postgres_connection:
     {% raw %}
     - connection_url: "postgresql://{{username}}:{{password}}@127.0.0.1:5432/secure-servers"
     {% endraw %}
-    - allowed_roles: "*"
+    - allowed_roles: "read-only"
     - username: vault
-    - password: complex_password
+    - password: complex_p$ssw0rd
 
 readonly_role:
   ss_vault.postgres_role_enabled:

@@ -4,6 +4,7 @@ This repository contains the example files to accompany our blog post series, *S
 
 * [Part 1](https://backbeat.tech/blog/secure-servers-with-saltstack-and-vault-part-1)
 * [Part 2](https://backbeat.tech/blog/secure-servers-with-saltstack-and-vault-part-2)
+* [Part 3](https://backbeat.tech/blog/secure-servers-with-saltstack-and-vault-part-3)
 
 The end of each post is marked with a separate git branch.
 Use `git checkout <part-n>` to checkout the files at a given point, e.g. for part 1:
