@@ -62,3 +62,28 @@ vault_service:
     - onchanges:
       - file: vault_config
       - file: vault_service
+      - x509: vault_ssl_cert
+
+vault_ssl_key:
+  x509.private_key_managed:
+    - name: /etc/pki/vault.key
+    - bits: 4096
+    - user: vault
+    - group: vault
+    - mode: 0700
+
+vault_ssl_cert:
+  x509.certificate_managed:
+    - name: /etc/pki/vault.crt
+    - public_key: /etc/pki/vault.key
+    - signing_cert: /etc/pki/root.crt
+    - signing_private_key: /etc/pki/root.key
+    - CN: 'vault.local'
+    - subjectAltName: 'IP:127.0.0.1'
+    - user: vault
+    - group: vault
+    - mode: 0400
+    - append_certs:
+        - /etc/pki/root.crt
+    - require:
+      - x509: vault_ssl_key
