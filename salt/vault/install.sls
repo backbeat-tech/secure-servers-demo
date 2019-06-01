@@ -57,6 +57,8 @@ vault_service:
         - file: vault_config
   service.running:
     - name: vault
-    - watch:
-        - file: vault_config
-        - file: vault_service
+  cmd.run:
+    - name: 'systemctl reload vault'
+    - onchanges:
+      - file: vault_config
+      - file: vault_service
