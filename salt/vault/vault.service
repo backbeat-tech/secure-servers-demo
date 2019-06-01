@@ -7,6 +7,7 @@ After=network-online.target
 Type=simple
 Restart=on-failure
 ExecStart=/usr/local/bin/vault server -config=/etc/vault.hcl
+ExecReload=/bin/kill -HUP $MAINPID
 ExecStop=/usr/local/bin/vault step-down
 User=vault
 Group=vault
