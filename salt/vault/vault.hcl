@@ -1,5 +1,7 @@
-storage "file" {
-  path = "/var/vault/data"
+storage "consul" {
+  address = "127.0.0.1:8501"
+  scheme  = "https"
+  path    = "vault/"
 }
 
 listener "tcp" {
